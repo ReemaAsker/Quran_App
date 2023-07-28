@@ -179,7 +179,12 @@ class _QuranAudioState extends State<QuranAudio> {
                             : Icons.pause,
                       ),
                       onPressed: () {
-                        playAudio();
+                        if (audioStatus == PlayerState.paused) {
+                          playAudio();
+                        } else if (audioStatus == PlayerState.playing) {
+                          pauseAudio();
+                        }
+                        setState(() {});
                       },
                     ),
                   )
