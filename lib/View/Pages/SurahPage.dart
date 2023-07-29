@@ -125,8 +125,13 @@ class _QuranAudioState extends State<QuranAudio> {
                 reverse: true,
                 controller: _pageController,
                 itemBuilder: ((context, index) {
-                  return Image(
-                    image: widget.surahPages[index],
+                  return InteractiveViewer(
+                    panEnabled: true,
+                    minScale: 0.1,
+                    maxScale: 5.0,
+                    child: Image(
+                      image: widget.surahPages[index],
+                    ),
                   );
                 }),
                 itemCount: widget.surahPages.length,
